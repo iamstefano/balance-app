@@ -180,6 +180,29 @@ btnTransfer.addEventListener("click", function (e) {
   }
 });
 
+//Close account
+
+btnClose.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  if (
+    inputCloseUsername.value === currentAccount.username &&
+    Number(inputClosePin.value) === currentAccount.pin
+  ) {
+    const index = accounts.findIndex(
+      (acc) => acc.username === currentAccount.username
+    );
+    //delete account
+    accounts.splice(index, 1);
+
+    //hide UI
+    containerApp.style.opacity = 100;
+  }
+
+  //clean values
+  inputCloseUsername.value = inputClosePin.value = "";
+});
+
 const currencies = new Map([
   ["USD", "United States dollar"],
   ["EUR", "Euro"],
