@@ -215,10 +215,9 @@ const startLogOutTimer = function () {
       labelWelcome.textContent = "Log in to get started";
       containerApp.style.opacity = 0;
     }
+    // decrease 1s
+    time--;
   };
-
-  // decrease 1s
-  time--;
 
   // set time to 5 minutes
   let time = 300;
@@ -369,7 +368,7 @@ btnClose.addEventListener("click", function (e) {
     accounts.splice(index, 1);
 
     //hide UI
-    containerApp.style.opacity = 100;
+    containerApp.style.opacity = 0;
   }
 
   //clean values
