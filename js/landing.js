@@ -15,7 +15,9 @@ message.textContent =
 messageBtn.className = 'btn  btn--close-cookie';
 messageBtn.textContent = 'Got it!';
 message.appendChild(messageBtn);
-header.prepend(message);
+header.append(message);
+//Cookies style
+message.style.backgroundColor = '#37383d';
 
 //Close cookie msg
 qS('.btn--close-cookie').addEventListener('click', function () {
