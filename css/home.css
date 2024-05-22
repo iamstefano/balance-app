@@ -24,7 +24,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 300;
   color: #444;
   line-height: 1.9;
@@ -214,7 +214,7 @@ h4 {
 
 .highlight::after {
   display: block;
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -468,7 +468,7 @@ h4 {
 }
 
 .testimonial::before {
-  content: "\201C";
+  content: '\201C';
   position: absolute;
   top: -5.7rem;
   left: -6.8rem;
@@ -669,4 +669,11 @@ h4 {
   color: #bbb;
   font-size: 1.5rem;
   font-weight: 400;
+}
+
+.btn--close-cookie {
+  font-size: 1.5rem;
+
+  padding: 0.8rem 3rem;
+  margin: 0.5rem;
 }
