@@ -87,3 +87,27 @@ qS('.nav__links').addEventListener('click', (e) => {
     qS(id).scrollIntoView({ behavior: 'smooth' });
   }
 });
+
+//Operations component
+
+const tabs = qSA('.operations__tab');
+const tabsContainer = qS('.operations__tab-container');
+const tabsContent = qSA('.operations__content');
+
+tabsContainer.addEventListener('click', (e) => {
+  const clicked = e.target.closest('.operations__tab');
+
+  if (!clicked) return;
+
+  //Remove active classes
+  tabs.forEach((t) => t.classList.remove('operations__tab--active'));
+  tabsContent.forEach((c) => c.classList.remove('operations__content--active'));
+
+  //Activate tab
+  clicked.classList.add('operations__tab--active');
+
+  //Activate content area
+  qS(`.operations__content--${clicked.dataset.tab}`).classList.add(
+    'operations__content--active'
+  );
+});
