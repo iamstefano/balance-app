@@ -52,3 +52,21 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+//Implementing smooth scrolling
+
+const btnScroolTo = qS('.btn--scroll-to');
+const section1 = qS('#section--1');
+
+btnScroolTo.addEventListener('click', function (e) {
+  const s1coords = section1.getBoundingClientRect();
+
+  //Scrolling
+  // window.scrollTo({
+  //   left: s1coords.left + window.scrollX,
+  //   top: s1coords.top + window.scrollY,
+  //   behavior: 'smooth',
+  // });
+
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
