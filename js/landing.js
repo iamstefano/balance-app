@@ -9,6 +9,10 @@ const btnsOpenModal = qSA('.btn--show-modal');
 const header = qS('header');
 const btnScroolTo = qS('.btn--scroll-to');
 const section1 = qS('#section--1');
+const tabs = qSA('.operations__tab');
+const tabsContainer = qS('.operations__tab-container');
+const tabsContent = qSA('.operations__content');
+const nav = qS('.nav');
 
 //Create cookie message
 const message = cE('div');
@@ -90,10 +94,6 @@ qS('.nav__links').addEventListener('click', (e) => {
 
 //Operations component
 
-const tabs = qSA('.operations__tab');
-const tabsContainer = qS('.operations__tab-container');
-const tabsContent = qSA('.operations__content');
-
 tabsContainer.addEventListener('click', (e) => {
   const clicked = e.target.closest('.operations__tab');
 
@@ -111,3 +111,20 @@ tabsContainer.addEventListener('click', (e) => {
     'operations__content--active'
   );
 });
+
+//Menu fade animation
+const handleOver = function (e, opacity) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach((el) => {
+      if (el !== link) el.style.opacity = opacity;
+    });
+    logo.style.opacity = opacity;
+  }
+};
+nav.addEventListener('mouseover', (e) => handleOver(e, 0.5));
+
+nav.addEventListener('mouseout', (e) => handleOver(e, 1));
