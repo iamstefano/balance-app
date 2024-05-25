@@ -6,7 +6,7 @@ const modal = qS('.modal');
 const overlay = qS('.overlay');
 const btnCloseModal = qS('.btn--close-modal');
 const btnsOpenModal = qSA('.btn--show-modal');
-const header = qS('header');
+const header = qS('.header');
 const btnScroolTo = qS('.btn--scroll-to');
 const section1 = qS('#section--1');
 const tabs = qSA('.operations__tab');
@@ -128,3 +128,21 @@ const handleOver = function (e, opacity) {
 nav.addEventListener('mouseover', (e) => handleOver(e, 0.5));
 
 nav.addEventListener('mouseout', (e) => handleOver(e, 1));
+
+//Sticky navigation with Intersection Observer API
+const navHeight = nav.getBoundingClientRect().height;
+
+const stickyNav = (entries) => {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  treshold: 0,
+  rootMargin: `-${navHeight}px`,
+});
+
+headerObserver.observe(header);
