@@ -98,7 +98,6 @@ p {
   color: #666;
 }
 
-/* This is BAD for accessibility! Don't do in the real world! */
 button:focus {
   outline: none;
 }
@@ -122,7 +121,7 @@ img {
   z-index: 100;
 }
 
-/* nav and stickly class at the same time */
+/* nav and sticky class at the same time */
 .nav.sticky {
   position: fixed;
   background-color: rgba(255, 255, 255, 0.95);
