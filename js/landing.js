@@ -13,6 +13,7 @@ const tabs = qSA('.operations__tab');
 const tabsContainer = qS('.operations__tab-container');
 const tabsContent = qSA('.operations__content');
 const nav = qS('.nav');
+const allSections = qSA('.section');
 
 //Create cookie message
 const message = cE('div');
@@ -146,3 +147,25 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 });
 
 headerObserver.observe(header);
+
+//Revealing sections on scroll
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  // console.log(entry);
+
+  if (!entry.isIntersecting) return;
+
+  entry.target.classList.remove('section--hidden');
+  observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  treshold: 0.35,
+});
+
+allSections.forEach(function (section) {
+  sectionObserver.observe(section);
+  section.classList.add('section--hidden');
+});
