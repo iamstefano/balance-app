@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="shortcut icon" type="image/png" href="img/icon.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/icon.png" />
 
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
@@ -24,22 +24,33 @@
           class="nav__logo"
           id="logo"
         />
-        <ul class="nav__links">
-          <li class="nav__item">
-            <a class="nav__link" href="#section--1">Features</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#section--2">Operations</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#section--3">Testimonials</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link nav__link--btn btn--show-modal" href="#"
-              >Open account</a
-            >
-          </li>
-        </ul>
+        <div class="nav__right">
+          <ul class="nav__links">
+            <li class="nav__item">
+              <a class="nav__link" href="#section--1">Features</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#section--2">Operations</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#section--3">Testimonials</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link nav__link--btn btn--show-modal" href="#"
+                >Open account</a
+              >
+            </li>
+          </ul>
+          <ul class="nav__app">
+            <li class="nav__item">
+              <a
+                class="nav__link nav__link--app highlight--app"
+                href="index.html"
+                >📊 BALANCE TRIAL</a
+              >
+            </li>
+          </ul>
+        </div>
       </nav>
 
       <div class="header__title">
@@ -52,6 +63,9 @@
         </h1>
         <h4>A simpler banking experience for a simpler life.</h4>
         <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button>
+        <button class="btn--app">
+          &RightArrow; Try Balance Free Trial &LeftArrow;
+        </button>
         <img
           src="assets/img/hero.png"
           class="header__img"
