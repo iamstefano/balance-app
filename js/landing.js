@@ -163,7 +163,7 @@ const revealSection = function (entries, observer) {
 
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null,
-  treshold: 0.35,
+  treshold: 0.15,
 });
 
 allSections.forEach(function (section) {
